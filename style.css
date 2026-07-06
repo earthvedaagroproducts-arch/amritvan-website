@@ -822,6 +822,10 @@ p {
     text-align: center;
   }
 
+  .nav-wrap {
+    position: relative;
+  }
+
   .brand-logo {
     height: 58px;
   }
@@ -839,31 +843,59 @@ p {
   }
 
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: none;
+    background: transparent;
+    font-size: 1.9rem;
+    cursor: pointer;
+    color: var(--text);
+    z-index: 1300;
+    position: relative;
   }
 
   .nav {
     position: absolute;
-    top: 100px;
+    top: calc(100% + 10px);
     left: 16px;
     right: 16px;
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 20px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
     padding: 18px;
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: stretch;
+    gap: 14px;
+    z-index: 1200;
   }
 
   .nav.show {
     display: flex;
   }
 
+  .nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
   .nav a.active::after {
     display: none;
+  }
+
+  .nav-btn {
+    margin-left: 0;
+    width: 100%;
   }
 
   .product-grid,
@@ -914,8 +946,6 @@ p {
     font-weight: 800;
     padding: 10px 14px;
   }
-}.reverse-on-desktop {
-  direction: rtl;
 }
 
 .reverse-on-desktop > * {
